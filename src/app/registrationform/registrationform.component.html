@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div>
+                <h1>Student Information Form</h1>
+            </div>
+            <div>
+                <form class="border border-dark p-5" [formGroup]="userForm" (ngSubmit)="formSubmit()">
+                    <label>Name</label>
+                    <span class="error" *ngIf="userFormControl.firstname.invalid && userFormControl.firstname.touched">Firstname required*</span>
+                    <span class="error" *ngIf="userFormControl.lastname.invalid && userFormControl.lastname.touched">Lastname required*</span>
+                    <div class="d-flex">
+                        <div class="mr-3">
+                            <input  type="text" formControlName="firstname" name="firstname" class="form-control">
+                            <p>firstname</p>
+                            
+                        </div>
+
+                       <div class="ml-3">
+                            <input  type="text" formControlName="lastname" name="lastname" class="form-control">
+                            <p>lastname</p>
+                        </div>
+                    </div>
+                
+                    <label>E-mail</label><br>
+                    <span class="error" *ngIf="userFormControl.email.invalid && userFormControl.email.touched">Invalid Email</span>
+                    <input  type="email" name="email" class="form-control" formControlName="email">
+
+                    
+                    <label>branch</label><br>
+                    <span class="error" *ngIf="userFormControl.branch.invalid && userFormControl.branch.touched">Invalid Branch</span>
+                    <input  formControlName="branch" type="text" name = "branch" class="form-control">
+
+                    <label>Date of birth</label><br>
+                    <span class="error" *ngIf="userFormControl.dob.invalid && userFormControl.dob.touched">Invalid Branch</span>
+                    <input  formControlName="dob" type="date" name = "dob" class="form-control">
+
+                    <label>Gender</label><br>
+                    <span class="error" *ngIf="userFormControl.gender.invalid && userFormControl.gender.touched">Invalid Branch</span>
+                    
+                   <div class="d-flex gender" >
+                    <input type="radio" formControlName="gender" name="gender" class="form-control radio" value="male">
+                    <span>Male</span>
+                     
+                    <input type="radio" formControlName="gender" name="gender" class="form-control radio" value="female">
+                    <span>Female</span>
+                    <input type="radio" formControlName="gender" name="gender" class="form-control radio" value="other">
+                    <span>Others</span>
+                </div>
+
+                <label>Date of Joining</label><br>
+                <span class="error" *ngIf="userFormControl.date_of_joining.invalid && userFormControl.date_of_joining.touched">Invalid date of joining</span>
+                    <input  formControlName="date_of_joining" type="date" name = "doj" class="form-control">
+
+                 <label>Date of Graduation</label><br>
+                 <span class="error" *ngIf="userFormControl.date_of_grad.invalid && userFormControl.date_of_grad.touched">Invalid date of gradutation</span>
+                    <input  formControlName="date_of_grad" type="date" name = "dog" class="form-control">
+                
+                <label>CGPA</label>
+                <span class="error" *ngIf="userFormControl.cgpa.invalid && userFormControl.cgpa.touched">Invalid CGPA</span>
+                <input formControlName="cgpa" type="number" name="cgpa" class="form-control">
+
+                <label>Address</label>
+                <span class="error" *ngIf="userFormControl.address.invalid && userFormControl.address.touched">Invalid Address</span>
+                <input formControlName="address" type="text" name="address" class="form-control">
+
+                <button class="btn btn-info" type="submit">Submit</button>
+                    
+                
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
